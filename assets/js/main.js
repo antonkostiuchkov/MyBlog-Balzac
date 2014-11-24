@@ -1,51 +1,51 @@
-var Anchor = {
-	init: function() {
-		Anchor.slidey = $('.slidey');
+// var Anchor = {
+// 	init: function() {
+// 		Anchor.slidey = $('.slidey');
 		
-		//  Uh, bind to the resizing of the window?
-		$(window).resize(Anchor.bindResize).trigger('resize');
+// 		//  Uh, bind to the resizing of the window?
+// 		$(window).resize(Anchor.bindResize).trigger('resize');
 		
-		//  Set up the toggle link
-		Anchor.linky = $('.linky').click(Anchor.toggleSlidey);
+// 		//  Set up the toggle link
+// 		Anchor.linky = $('.linky').click(Anchor.toggleSlidey);
 
-		//  Hide the thingymabob
-		setTimeout(function() {
-		    //  Set up the slidey panel
-		    Anchor.hideSlidey();
+// 		//  Hide the thingymabob
+// 		setTimeout(function() {
+// 		    //  Set up the slidey panel
+// 		    Anchor.hideSlidey();
 		    
-			$('body').addClass('js-enabled');
-		}, 10);
+// 			$('body').addClass('js-enabled');
+// 		}, 10);
 		
-		//  Listen for search link
-		$('a[href="#search"]').click(function() {
-			if(!Anchor.linky.hasClass('active')) {
-				return Anchor.toggleSlidey.call(Anchor.linky);
-			}
-		});
-	},
+// 		//  Listen for search link
+// 		$('a[href="#search"]').click(function() {
+// 			if(!Anchor.linky.hasClass('active')) {
+// 				return Anchor.toggleSlidey.call(Anchor.linky);
+// 			}
+// 		});
+// 	},
 	
-	hideSlidey: function() {
-		Anchor.slidey.css('margin-top', this._slideyHeight);
-		Anchor.linky && Anchor.linky.removeClass('active');
+// 	hideSlidey: function() {
+// 		Anchor.slidey.css('margin-top', this._slideyHeight);
+// 		Anchor.linky && Anchor.linky.removeClass('active');
 		
-		return this;
-	},
+// 		return this;
+// 	},
 	
-	toggleSlidey: function() {
-		var self = Anchor;
-		var me = $(this);
+// 	toggleSlidey: function() {
+// 		var self = Anchor;
+// 		var me = $(this);
 			
-		me.toggleClass('active');
-		self.slidey.css('margin-top', me.hasClass('active') ? 0 : self._slideyHeight);
+// 		me.toggleClass('active');
+// 		self.slidey.css('margin-top', me.hasClass('active') ? 0 : self._slideyHeight);
 		
-		return false;
-	},
+// 		return false;
+// 	},
 	
-	bindResize: function() {
-		Anchor._slideyHeight = -(Anchor.slidey.height() + 1);
-		Anchor.hideSlidey();
-	}
-};
+// 	bindResize: function() {
+// 		Anchor._slideyHeight = -(Anchor.slidey.height() + 1);
+// 		Anchor.hideSlidey();
+// 	}
+// };
 
-//  And bind loading
-$(Anchor.init);
+// //  And bind loading
+// $(Anchor.init);
